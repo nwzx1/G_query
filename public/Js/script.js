@@ -84,6 +84,6 @@ Button.addEventListener("click",(e) => {
     }
     else if (isValid == true) {
         ErrorResolved(false)
-        window.location.href = "HTML-css-Js/pages/page1.html";
+        window.location.href = "pages/page1.html";
     }
 })
