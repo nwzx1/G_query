@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page - book appsite</title>
-     <!-- Style Sheet in ( public -> css -> style.css () )-->
-    <link rel="stylesheet" href="public/css/style.css">
+    <!-- Style Sheet in ( public -> css -> style.css () )-->
+    <!-- <link rel="stylesheet" href="src/styles/main.css"> -->
     <!-- Style Sheet End -->
 </head>
 
@@ -14,91 +14,10 @@
 
 <body>
     <div id="root">
-
-        <div id="GUIBox">
-
-             <!-- Top Area -->
-
-            <div class="TopAb">
-                <img 
-                  src="./public/icons/person.png" 
-                  alt="" 
-                  style="width: 60%;"
-                >
-            </div>
-
-            <!-- Mid Area -->
-
-            <div class="MidAb">
-
-                <div class="emptybox" 
-                     id="emptybox1"                
-                >
-
-                    <div class="txt">
-                        <img 
-                           src="./public/icons/eml.png" 
-                           alt="" 
-                           width="30"
-                        >
-                    </div>
-
-                    <input 
-                       type="email" 
-                       name="eml" 
-                       class="inp" 
-                       id="Eml"
-                       placeholder="Sample@gmail.com"
-                    >
-                </div>
-
-                <div class="emptybox"
-                     id="emptybox2"
-                >
-                    
-                    <div class="txt">
-
-                        <img 
-                           src="./public/icons/pass.png" 
-                           alt=""
-                           width="30"
-                        >
-
-                    </div>
-
-                    <input 
-                        type="password" 
-                        name="pass" 
-                        id="Pss"
-                        class="inp" 
-                        placeholder="Password"
-                    >
-
-                </div>
-
-            </div>
-
-            <!-- Bottom Area -->
-            
-            <div id="BotAb">
-                <div class="CKS">
-                    <input 
-                       type="checkbox"
-                       id="Chk"
-                    >
-                 Remember me
-                </div>
-                
-                   <button 
-                       type="submit"
-                       id="Btn"
-                   >SUBMIT</button>
-
-            </div>
-
-        </div>
+        <button id="btn">bttun</button>
     </div>
-    <Script src="./public/Js/script.js"></Script>
+    <script src="./build/main.js" type="module">
+    </script>
 </body>
 
 <!-- Body Ends -->
