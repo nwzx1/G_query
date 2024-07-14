@@ -34,8 +34,13 @@ export default class $G {
             .replace(',', ";")
             .replace('{', "")
             .replace("}", ';')
+            .replace(',', ";")
             .replace(/"/g, '')
+            .replace(/'/g, '')
 
-        this._doc_.style = sty
+        console.log(sty)
+
+        this._doc_.style = sty;
+        return this
     }
 }

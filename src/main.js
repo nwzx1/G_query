@@ -1,10 +1,14 @@
 import $G from "../Gost/gost.js";
 
 new $G('button')
-    .addEvent('click', (e) => {
-        new $G('#root')
+    .setStyle({
+        "width": "10rem",
+        "height": '4rem'
+    }).addEvent('click', (e) => {
+        new $G('#btn')
             .setStyle({
-                "background": 'red',
-                "margin":"2rem"
+                "transition": "0.5s",
+                "width": "20rem",
+                "height": '6rem'
             })
     })
