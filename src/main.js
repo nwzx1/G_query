@@ -9,6 +9,7 @@ new $G('button')
             .setStyle({
                 "transition": "0.5s",
                 "width": "20rem",
-                "height": '6rem'
+                "height": '6rem',
+                "background": "red"
             })
     })

@@ -33,10 +33,13 @@ export default class $G {
         const sty = JSON.stringify(style)
             .replace(',', ";")
             .replace('{', "")
+            .replace(',', ";")
             .replace("}", ';')
             .replace(',', ";")
             .replace(/"/g, '')
+            .replace(',', ";")
             .replace(/'/g, '')
+            .replace(',', ";")
 
         console.log(sty)
 
