@@ -1,3 +1,3 @@
 link for this website :> 
-https://nwzx1.github.io/HTML-css-Js/app.HTML
+https://nwzx1.github.io/G_query/app.HTML
 
