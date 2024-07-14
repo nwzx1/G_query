@@ -1,15 +1,23 @@
 import $G from "../Gost/gost.js";
 
-new $G('button')
+new $G('body')
     .setStyle({
-        "width": "10rem",
-        "height": '4rem'
-    }).addEvent('click', (e) => {
-        new $G('#btn')
-            .setStyle({
-                "transition": "0.5s",
-                "width": "20rem",
-                "height": '6rem',
-                "background": "red"
-            })
+        "padding": "0px",
+        "margin": "0px",
+    }).$next('#root', ($) => {
+        $.setStyle({
+            "width": "100vw",
+            "height": "100vh",
+            "background-color": "yellow"
+        }).createBox('#root', {
+            Tag: 'button',
+            content: "submit"
+        }, ($) => {
+            $.addEvent('click', (e) => console.log(e.target))
+                .setStyle({
+                    "width": "10rem",
+                    "height": "6rem",
+                    "background": "red"
+                })
+        })
     })

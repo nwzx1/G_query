@@ -1,9 +1,12 @@
 export default class $G {
 
+    /**
+     * @private
+     */
     _doc_;
 
     /**
-     * @param {string} _Query_ 
+     * @param {keyof HTMLElementTagNameMap} _Query_ 
      */
     constructor(_Query_) {
         this._doc_ = document.querySelector(_Query_)
@@ -41,9 +44,38 @@ export default class $G {
             .replace(/'/g, '')
             .replace(',', ";")
 
-        console.log(sty)
-
         this._doc_.style = sty;
+        return this
+    }
+
+    /**
+   * @typedef {Object} props
+   * @property {keyof HTMLElementTagNameMap} Tag
+   * @property {string} content
+   */
+
+    /**
+     * @param {keyof HTMLElementTagNameMap} where
+     * 
+     * @param {props} _props 
+     * @param {($s:$G) => void} self 
+     */
+    createBox(where, _props, self) {
+        let newChild = document.createElement(_props.Tag)
+        newChild.innerHTML = _props.content
+        let _doc1_ = document.querySelector(where)
+        _doc1_.appendChild(newChild);
+        self(new $G(newChild.tagName))
+        return this
+    }
+
+
+    /**
+     * @param {($n:$G) => void} fun
+     * @param {typeof HTMLElementTagNameMap} where 
+     */
+    $next(where, fun) {
+        fun(new $G(where))
         return this
     }
 }
