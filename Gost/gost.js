@@ -51,18 +51,24 @@ export default class $G {
     /**
    * @typedef {Object} props
    * @property {keyof HTMLElementTagNameMap} Tag
-   * @property {string} content
+   * @property {string} [innnerContent]
+   * @property {string|string[]} [class]
+   * @property {string} [id]
    */
 
     /**
-     * @param {keyof HTMLElementTagNameMap} where
+     * @param {keyof HTMLElementTagNameMap} where - set where or which Document you want to target
      * 
      * @param {props} _props 
-     * @param {($s:$G) => void} self 
+     * @param {($s:$G) => void} self calback function which provid instence of self
      */
     createBox(where, _props, self) {
         let newChild = document.createElement(_props.Tag)
-        newChild.innerHTML = _props.content
+        // create start
+        typeof _props.innnerContent !== 'undefined' ? newChild.innerHTML = _props.innnerContent : {};
+        typeof _props.innnerContent !== 'undefined' ? newChild.className = _props.class : {};
+        typeof _props.innnerContent !== 'undefined' ? newChild.id = _props.id : newChild;
+        // end create
         let _doc1_ = document.querySelector(where)
         _doc1_.appendChild(newChild);
         self(new $G(newChild.tagName))
@@ -71,11 +77,14 @@ export default class $G {
 
 
     /**
-     * @param {($n:$G) => void} fun
-     * @param {typeof HTMLElementTagNameMap} where 
+     * @param {($n:$G) => void} fun - calback function which provid instence of given where Document
+     * @param {typeof HTMLElementTagNameMap} where - set where or which Document you want to target
      */
     $next(where, fun) {
         fun(new $G(where))
         return this
     }
+
+    
+
 }
